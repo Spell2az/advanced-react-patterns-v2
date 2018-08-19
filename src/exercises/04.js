@@ -21,7 +21,10 @@ class Toggle extends React.Component {
     // You'll notice the children prop in the Usage component
     // is a function. 🐨 So you can replace this with a call this.props.children()
     // But you'll need to pass it an object with `on` and `toggle`.
-    return <Switch on={on} onClick={this.toggle} />
+
+    // helpful articles => https://medium.com/byteconf/render-props-in-react-6081b6fa3593
+    // helpful articles => https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce
+    return this.props.children({on, toggle: this.toggle})
   }
 }
 
